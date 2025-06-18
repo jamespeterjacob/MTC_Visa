@@ -102,12 +102,16 @@
         })
         .then(response => {
             if (response.ok) {
-                // SUCCESS: This is the only part you need to change.
-                // Instead of showing an alert, this line redirects the user.
-                window.location.href = 'index.html';
+                // STEP 1: Show a success message.
+                // The script will pause here until the user clicks "OK".
+                alert('Form submitted successfully! Click OK to return to the homepage.');
+
+                // STEP 2: Redirect to the index page.
+                // This line will only run AFTER the user dismisses the alert above.
+                window.location.href = 'index.html'; 
             } else {
-                // FAILURE: The user is alerted that something went wrong.
-                alert('Form submission failed.');
+                // If submission fails, inform the user.
+                alert('Form submission failed. Please try again.');
             }
         })
         .catch(error => {
